@@ -1,0 +1,149 @@
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Usuario</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/links/usuario">Inicio</a></li>
+              <li class="breadcrumb-item active">Configuración</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <section class="col-lg-12 connectedSortable">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Nuevo Usuario</h3>
+              </div>
+              <div class="container p-1">
+                <div class="row">
+                  <div class="card-body" >
+                    <form action="" method="POST">
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col">
+                              <input type="text" name="nombres" class="form-control" placeholder="Nombres" aria-label="Nombres" autofocus>
+                            </div>
+                            <div class="col">
+                              <input type="text" name="apellidos" class="form-control" placeholder="Apellidos" aria-label="Apellidos">
+                            </div>
+                          </div>
+                        </div>
+                        <label for=""></label>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <input type="text" name="correo" class="form-control" placeholder="Correo" aria-label="Correo">
+                            </div>
+                            <div class="col-md-4">
+                              <input type="text" name="usuario" class="form-control" placeholder="Usuario" aria-label="Usuario">
+                            </div>
+                            <div class="col-md-4">
+                              <input type="password" name="password" class="form-control" placeholder="Contraseña" aria-label="Password">
+                            </div>
+                            <div class="container px-2">
+                              <div class="row g-2">
+                                <div class="col-6">
+                                  <div class="p-2 border bg-light" > Tipo de Rol
+                                    <label for=""></label>
+                                    <select name="idRol" class="form-control">
+                                      <option selected>Elegir..</option>
+                                      {{#each rol1 }}
+                                      <option value="{{idRol}}">{{tipoRol}}</option>
+                                    {{/each }}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <div class="p-2 border bg-light"> Estado
+                                    <label for=""></label>
+                                    <select name="estado" class="form-control">
+                                      <option selected>Elergir...</option>
+                                      <option value="1">Activo</option>
+                                      <option value="2">Inactivo</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+                
+              <!-- /.card-body -->
+            </div>
+          </section>
+          <section class="col-lg-12 connectedSortable">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Listado</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>Nombres</th>
+                                                <th>Apellidos</th>
+                                                <th>Correo</th>
+                                                <th>Usuario</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each usuario}}
+                                              <tr>
+                                                  <td>{{idUsuario}}</td>
+                                                  <td>{{nombres}}</td>
+                                                  <td>{{apellidos}}</td>
+                                                  <td>{{correo}}</td>
+                                                  <td>{{usuario}}</td>
+                                                  <td>{{estado}}</td>
+                                                  <td>
+                                                    <div class="container">
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="modal" data-target="#modificarp{{id}}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="modal" data-target="#eliminarp{{id}}"  data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                  </td>
+                                              </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+  <aside class="control-sidebar control-sidebar-dark">
+  </aside>
+</div>
+</body>
